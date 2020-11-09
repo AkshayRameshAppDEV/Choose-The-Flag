@@ -24,4 +24,4 @@
   - UIAlertController
 
 ### Day 16
-<img src="" alt="Choose the flag" width="250" height="500">
+<img src="https://github.com/AkshayRameshAppDEV/Choose-The-Flag/blob/master/Gif/ChooseTheFlag.gif" alt="Choose the flag" width="250" height="500">
