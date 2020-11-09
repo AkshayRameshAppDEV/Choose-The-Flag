@@ -45,10 +45,20 @@ class ViewController: UIViewController {
     @IBAction func clickFlag(_ sender: UIButton) {
         let chosenAnswer = sender.tag
         if actualAnswerSet[chosenAnswer] == flagImages[actualAnswer!] {
-            print("Correct")
+            showAlert(alertTitle: "Correct", alertMessage: "Your chosen Answer is right!")
         } else {
-            print("wrong! You chose: \(actualAnswerSet[chosenAnswer])")
+            showAlert(alertTitle: "Wrong", alertMessage: "Your chosen Answer is wrong, because you chose \(actualAnswerSet[chosenAnswer].uppercased())")
         }
+    }
+    
+    func showAlert(alertTitle: String, alertMessage: String) {
+        let alert = UIAlertController(title: alertTitle, message: alertMessage, preferredStyle: .alert)
+        alert.addAction(UIAlertAction(title: "Continue", style: .default, handler: { _ in
+            self.actualAnswer = 0
+            self.actualAnswerSet = []
+            self.pick3RandomFlagsAndTitle()
+        }))
+        self.present(alert, animated: true, completion: nil)
     }
     
 }
